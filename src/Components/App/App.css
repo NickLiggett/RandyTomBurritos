@@ -1,0 +1,23 @@
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 99%;
+  height: 98%;
+  background-image: url("../../curtains.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+}

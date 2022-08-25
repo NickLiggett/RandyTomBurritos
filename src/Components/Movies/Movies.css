@@ -1,0 +1,9 @@
+.all-movies {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    border-style: solid;
+    height: 85%;
+    overflow: auto;
+}
