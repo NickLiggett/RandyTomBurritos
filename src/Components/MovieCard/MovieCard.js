@@ -1,9 +1,11 @@
 import React from "react"
 import "./MovieCard.css"
 
-const MovieCard = () => {
+const MovieCard = (props) => {
     return (
-        <div className="movie-card"></div>
+        <div className="movie-card" style={{backgroundImage: `url(${props.posterPath})`, backgroundPosition: "center", backgroundSize: "cover"}}>
+            
+        </div>
     )
 }
 
