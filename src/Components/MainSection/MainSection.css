@@ -3,7 +3,9 @@
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: center;
-    border-style: solid;
+    /* border-style: solid; */
     height: 85%;
-    overflow: auto;
+    /* overflow: auto; */
+    margin-top: 12%;
+    /* margin-bottom: 20%; */
 }
