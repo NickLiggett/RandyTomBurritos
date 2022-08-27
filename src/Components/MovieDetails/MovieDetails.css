@@ -1,0 +1,9 @@
+.details-wrapper {
+    display: flex;
+    margin-top: 200px;
+    justify-content: center;
+}
+
+.poster {
+    width: 350px;
+}
