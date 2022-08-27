@@ -1,10 +1,20 @@
 import React from "react"
 import "./MovieCard.css"
 
+
+
 const MovieCard = (props) => {
+
     return (
-        <div className="movie-card" style={{backgroundImage: `url(${props.posterPath})`, backgroundPosition: "center", backgroundSize: "cover"}}>
-            
+        <div className="movie-card" 
+            // onClick={event => this.handleClick(event)}
+            id={props.id}
+            style={{
+            backgroundImage: `url(${props.posterPath})`, 
+            backgroundPosition: "center", 
+            backgroundSize: "cover"}}
+            onClick={() => props.handleClick(props.id)}
+        >
         </div>
     )
 }
