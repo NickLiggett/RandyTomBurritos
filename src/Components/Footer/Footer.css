@@ -1,7 +1,12 @@
 footer {
-    border-style: solid;
-    border-color: black;
-    height: 4%;
+    /* border-style: solid; */
+    /* border-color: black; */
+    height: 7%;
     color: white;
     text-align: center;
+    background-color: #d8eef0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }

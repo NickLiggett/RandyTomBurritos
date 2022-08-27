@@ -1,9 +1,13 @@
 import React from "react"
 import "./Header.css"
+import randyTom from "../images/randy-tom.png"
 
 const Header = () => {
     return (
-        <nav>Randy Tom's Burritos</nav>
+        <div className="nav">
+            <img src={randyTom} alt="randy tom logo"/>
+             <h1>Randy Tom's Burritos</h1>
+        </div>
     )
 }
 
