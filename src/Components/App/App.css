@@ -26,3 +26,8 @@ body {
 .details {
   font-size: 30px;
 }
+
+.error-message {
+  margin-top: 350px;
+  text-align: center;
+}

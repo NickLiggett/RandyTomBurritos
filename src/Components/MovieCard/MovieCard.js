@@ -3,7 +3,7 @@ import "./MovieCard.css"
 
 
 
-const MovieCard = (props) => {
+const MovieCard = (props) => {   // <---- only pass poster and ID
 
     return (
         <div className="movie-card" 
