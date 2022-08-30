@@ -4,7 +4,7 @@ import Header from "../Header/Header"
 import MainSection from "../MainSection/MainSection"
 import Footer from "../Footer/Footer"
 import MovieDetails from "../MovieDetails/MovieDetails"
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 class App extends React.Component {
   constructor() {
@@ -64,13 +64,11 @@ class App extends React.Component {
     return (
       <div className="main">
         <Header />
-        <Switch>
           <Route exact path="/" render={() => <MainSection movies={this.state.movies} fetchSingleMovie={this.fetchSingleMovie}/>}/>
           <Route exact path="/:id" render={({ match }) => {
-            this.fetchSingleMovie(match.params.id)
-            return <MovieDetails match={match} movie={this.state.currentMovie}/>
+            console.log(match.params.id)
+            return <MovieDetails movieID={match.params.id} movies={this.state.movies}/>
           }}/>
-        </Switch>
         <Footer />
       </div>
   )
