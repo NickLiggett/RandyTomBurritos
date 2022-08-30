@@ -4,7 +4,7 @@ import Header from "../Header/Header"
 import MainSection from "../MainSection/MainSection"
 import Footer from "../Footer/Footer"
 import MovieDetails from "../MovieDetails/MovieDetails"
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 class App extends React.Component {
   constructor() {
@@ -47,28 +47,13 @@ class App extends React.Component {
       this.setState({ movies: [], error: true, errorMessage: error.message, currentMovie: null })
     })
   }
-  fetchSingleMovie = id => {
-    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
-    .then(response => response.json())
-    .then(data => {
-      this.setState({
-          movies: [],
-          error: false,
-          errorMessage: '',
-          currentMovie: data.movie
-      })
-    })
-  }
 
   render() {
     return (
       <div className="main">
         <Header />
-          <Route exact path="/" render={() => <MainSection movies={this.state.movies} fetchSingleMovie={this.fetchSingleMovie}/>}/>
-          <Route exact path="/:id" render={({ match }) => {
-            console.log(match.params.id)
-            return <MovieDetails movieID={match.params.id} movies={this.state.movies}/>
-          }}/>
+          <Route exact path="/" render={() => <MainSection movies={this.state.movies} />}/>
+          <Route exact path="/:id" render={({ match }) => <MovieDetails movieID={match.params.id} />}/>
         <Footer />
       </div>
   )
