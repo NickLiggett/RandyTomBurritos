@@ -4,12 +4,14 @@ import Header from "../Header/Header"
 import MainSection from "../MainSection/MainSection"
 import Footer from "../Footer/Footer"
 import MovieDetails from "../MovieDetails/MovieDetails"
+import { Route, Switch } from 'react-router-dom';
 
 class App extends React.Component {
   constructor() {
     super()
     this.state = {
       movies: [],
+      currentMovie: null,
       error: false,
       errorMessage: ''
     }
@@ -19,10 +21,11 @@ class App extends React.Component {
     this.fetchMovies()
   }
 
-  handleClick = (id) => {
-    const filteredMovie = this.state.movies.filter(movie => movie.id === id)
-    this.setState({ movies: filteredMovie, error: false, errorMessage: ''  })
-  }
+  // handleClick = (id) => {
+  //   console.log('HANDLE CLICK REACHED')
+  //   const filteredMovie = this.state.movies.filter(movie => movie.id === id)
+  //   this.setState({ movies: filteredMovie, error: false, errorMessage: ''  })
+  // }
 
   viewAll = () => {
     this.fetchMovies()
@@ -31,7 +34,6 @@ class App extends React.Component {
   fetchMovies = () => {
     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
     .then(response => {
-      console.log(response)
       if (!response.ok) {
         throw Error('Restuffing Burrito... sorry about that.')
       } else {
@@ -39,11 +41,22 @@ class App extends React.Component {
       }
     })
     .then(data => {
-      console.log(data)
-      this.setState({ movies: data.movies, error: false, errorMessage: ''  })
+      this.setState({ movies: data.movies, error: false, errorMessage: '', currentMovie: null })
     })
     .catch(error => {
-      this.setState({ movies: [], error: true, errorMessage: error.message })
+      this.setState({ movies: [], error: true, errorMessage: error.message, currentMovie: null })
+    })
+  }
+  fetchSingleMovie = id => {
+    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`)
+    .then(response => response.json())
+    .then(data => {
+      this.setState({
+          movies: [],
+          error: false,
+          errorMessage: '',
+          currentMovie: data.movie
+      })
     })
   }
 
@@ -51,8 +64,13 @@ class App extends React.Component {
     return (
       <div className="main">
         <Header />
-        {this.state.error && <h1 className="error-message">{this.state.errorMessage}</h1>}
-        {this.state.movies.length === 1 ? <MovieDetails movie={this.state.movies} viewAll={this.viewAll}/> : <MainSection movies={this.state.movies} handleClick={this.handleClick} />}
+        <Switch>
+          <Route exact path="/" render={() => <MainSection movies={this.state.movies} fetchSingleMovie={this.fetchSingleMovie}/>}/>
+          <Route exact path="/:id" render={({ match }) => {
+            this.fetchSingleMovie(match.params.id)
+            return <MovieDetails match={match} movie={this.state.currentMovie}/>
+          }}/>
+        </Switch>
         <Footer />
       </div>
   )
