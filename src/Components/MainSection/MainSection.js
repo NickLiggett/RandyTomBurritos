@@ -2,8 +2,8 @@ import React from "react"
 import "./MainSection.css"
 import MovieCard from "../MovieCard/MovieCard"
 
-const Movies = ( {movies, handleClick} ) => {
 
+const Movies = ( {movies, fetchSingleMovie} ) => {
     const movieList = movies.map(movie => {
        return <MovieCard 
           id={movie.id} 
@@ -13,7 +13,7 @@ const Movies = ( {movies, handleClick} ) => {
           averageRating={movie.average_rating}
           releaseDate={movie.release_date}
           key={movie.id}
-          handleClick={handleClick}
+          fetchSingleMovie={fetchSingleMovie}
         />
     })
     return (
