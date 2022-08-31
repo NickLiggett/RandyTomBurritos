@@ -6,19 +6,14 @@ import MovieCard from "../MovieCard/MovieCard"
 const Movies = ( { movies } ) => {
     const movieList = movies.map(movie => {
        return <MovieCard 
-          id={movie.id} 
-          posterPath={movie.poster_path}
-          backdropPath={movie.backdrop_path}
-          title={movie.title}
-          averageRating={movie.average_rating}
-          releaseDate={movie.release_date}
-          key={movie.id}
-        />
+            key={movie.id}
+            id={movie.id} 
+            posterPath={movie.poster_path}/>
     })
     return (
-        <div className="all-movies">
-            {movieList}
-        </div>
+            <div className="all-movies">
+                {movieList}
+            </div>
     )
 }
 

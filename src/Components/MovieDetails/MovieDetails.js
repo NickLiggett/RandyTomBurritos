@@ -15,19 +15,11 @@ class MovieDetails extends React.Component {
     componentDidMount = () => {
             fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.state.id}`)
             .then(response => response.json())
-            .then(data => {
-                console.log(data.movie)
-              this.setState({
-                  movie: data.movie,
-                  id: data.movie.id
-              })
-            })
+            .then(data => this.setState({ movie: data.movie }))
           }
     
-
-    render(){
+    render() {
         const movie = this.state.movie
-        console.log(movie)
         return (this.state.movie) ?  (
             <div className="details-wrapper" style={{
                 backgroundImage: `url(${movie.backdrop_path})`
@@ -50,7 +42,7 @@ class MovieDetails extends React.Component {
                     RUNTIME: {movie.runtime} minutes
                 </p>
                 <Link to="/">
-                <button className="view-all-button">RETURN TO ALL MOVIES</button>
+                    <button className="view-all-button">RETURN TO ALL MOVIES</button>
                 </Link>
             </div>
             <div>
