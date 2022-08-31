@@ -3,7 +3,7 @@ import "./MainSection.css"
 import MovieCard from "../MovieCard/MovieCard"
 
 
-const Movies = ( {movies, fetchSingleMovie} ) => {
+const Movies = ( { movies } ) => {
     const movieList = movies.map(movie => {
        return <MovieCard 
           id={movie.id} 
@@ -13,7 +13,6 @@ const Movies = ( {movies, fetchSingleMovie} ) => {
           averageRating={movie.average_rating}
           releaseDate={movie.release_date}
           key={movie.id}
-          fetchSingleMovie={fetchSingleMovie}
         />
     })
     return (

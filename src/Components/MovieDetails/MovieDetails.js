@@ -1,5 +1,7 @@
 import React from "react"
 import "./MovieDetails.css"
+import randyTom from "../images/randy-tom.png"
+import { Link } from 'react-router-dom'
 
 class MovieDetails extends React.Component {
     constructor(props) {
@@ -33,13 +35,23 @@ class MovieDetails extends React.Component {
             <img className="poster" alt="movie-poster" src={movie.poster_path}/>
             <div className="details">
                 <h2>{movie.title.toUpperCase()}</h2>
+                <h3>
+                    {movie.tagline}
+                </h3>
                 <p>
-                    RANDY TOM'S TASTINESS RATING: {movie.average_rating.toFixed(2)} 
-                </p> 
-                <p>
+                    {movie.overview}
+                    <br></br>
+                    <img className="randy-tom" src={randyTom} alt="randy tom logo"/>
+                    <br></br>
+                    RANDY TOM'S TASTINESS RATING: 🌯 {movie.average_rating.toFixed(2)} 🌯  
+                    <br></br>
                     RELEASE DATE: {movie.release_date}
+                    <br></br>
+                    RUNTIME: {movie.runtime} minutes
                 </p>
+                <Link to="/">
                 <button className="view-all-button">RETURN TO ALL MOVIES</button>
+                </Link>
             </div>
             <div>
             </div>
