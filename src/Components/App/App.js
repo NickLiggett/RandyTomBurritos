@@ -4,6 +4,7 @@ import Header from "../Header/Header"
 import MainSection from "../MainSection/MainSection"
 import Footer from "../Footer/Footer"
 import MovieDetails from "../MovieDetails/MovieDetails"
+import Trailer from '../Trailer/Trailer'
 import { Route } from 'react-router-dom';
 
 class App extends React.Component {
@@ -45,6 +46,7 @@ class App extends React.Component {
           {(this.state.error && <h1 className="error-message">{this.state.errorMessage}</h1>)}
           <Route exact path="/" render={() => <MainSection movies={this.state.movies} />}/>
           <Route exact path="/:id" render={({ match }) => <MovieDetails movieID={match.params.id} />}/>
+          <Route exact path="/:id/videos" render={({ match }) => <Trailer movieID={match.params.id} movies={this.state.movies}/>}/>
         <Footer />
       </div>
   )

@@ -3,6 +3,7 @@ import "./MovieDetails.css"
 import randyTom from "../images/randy-tom.png"
 import { Link } from 'react-router-dom'
 
+
 class MovieDetails extends React.Component {
     constructor(props) {
         super(props)
@@ -37,13 +38,38 @@ class MovieDetails extends React.Component {
                     <br></br>
                     RANDY TOM'S TASTINESS RATING: 🌯 {movie.average_rating.toFixed(2)} 🌯  
                     <br></br>
+                    {/* {const dateOfMovie = new Date(movie.release_date)
+                    console.log(dateOfMovie)} */}
                     RELEASE DATE: {movie.release_date}
                     <br></br>
                     RUNTIME: {movie.runtime} minutes
+                    <br></br>
+                   {movie.revenue > 0 && <p className="rev-and-budget">
+                    REVENUE: {movie.revenue.toLocaleString('en-US', {
+                        style: 'currency',
+                        currency: 'USD',
+                        })}
+                    </p>}
+                    {movie.budget > 0 && <p className="rev-and-budget">
+                    BUDGET: {movie.budget.toLocaleString('en-US', {
+                        style: 'currency',
+                        currency: 'USD',
+                        })}
+                     </p>}
                 </p>
+                <h3>
+                    GENRES:
+                    <br></br>
+                    {movie.genres.join(' · ')}
+                </h3>
+                <div className='button-container'>
                 <Link to="/">
                     <button className="view-all-button">RETURN TO ALL MOVIES</button>
                 </Link>
+                <Link to={`${movie.id}/videos`} replace>
+                    <button className="view-all-button">VIEW TRAILER</button>
+                </Link>
+                </div>
             </div>
             <div>
             </div>
