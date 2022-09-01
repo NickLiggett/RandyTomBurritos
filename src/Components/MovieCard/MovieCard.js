@@ -4,16 +4,15 @@ import { Link } from "react-router-dom"
 
 
 
-const MovieCard = (props) => {   // <---- only pass poster and ID
+const MovieCard = ({ id, posterPath }) => {
     return (
-        <Link to={`${props.id}`}>
+        <Link to={`${id}`}>
         <div className="movie-card" 
-            id={props.id}
+            id={id}
             style={{
-            backgroundImage: `url(${props.posterPath})`, 
+            backgroundImage: `url(${posterPath})`, 
             backgroundPosition: "center", 
-            backgroundSize: "cover"}}
-        >
+            backgroundSize: "cover"}}>
         </div>
         </Link>
     )

@@ -4,7 +4,7 @@ import Header from "../Header/Header"
 import MainSection from "../MainSection/MainSection"
 import Footer from "../Footer/Footer"
 import MovieDetails from "../MovieDetails/MovieDetails"
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 class App extends React.Component {
   constructor() {
@@ -21,16 +21,6 @@ class App extends React.Component {
     this.fetchMovies()
   }
 
-  // handleClick = (id) => {
-  //   console.log('HANDLE CLICK REACHED')
-  //   const filteredMovie = this.state.movies.filter(movie => movie.id === id)
-  //   this.setState({ movies: filteredMovie, error: false, errorMessage: ''  })
-  // }
-
-  viewAll = () => {
-    this.fetchMovies()
-  }
-
   fetchMovies = () => {
     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
     .then(response => {
@@ -41,10 +31,10 @@ class App extends React.Component {
       }
     })
     .then(data => {
-      this.setState({ movies: data.movies, error: false, errorMessage: '', currentMovie: null })
+      this.setState({ movies: data.movies })
     })
     .catch(error => {
-      this.setState({ movies: [], error: true, errorMessage: error.message, currentMovie: null })
+      this.setState({ error: true, errorMessage: error.message })
     })
   }
 
@@ -52,6 +42,7 @@ class App extends React.Component {
     return (
       <div className="main">
         <Header />
+          {(this.state.error && <h1 className="error-message">{this.state.errorMessage}</h1>)}
           <Route exact path="/" render={() => <MainSection movies={this.state.movies} />}/>
           <Route exact path="/:id" render={({ match }) => <MovieDetails movieID={match.params.id} />}/>
         <Footer />
