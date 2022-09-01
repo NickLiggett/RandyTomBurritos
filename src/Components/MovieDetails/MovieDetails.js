@@ -3,6 +3,7 @@ import "./MovieDetails.css"
 import randyTom from "../images/randy-tom.png"
 import { Link } from 'react-router-dom'
 
+
 class MovieDetails extends React.Component {
     constructor(props) {
         super(props)
@@ -65,9 +66,9 @@ class MovieDetails extends React.Component {
                 <Link to="/">
                     <button className="view-all-button">RETURN TO ALL MOVIES</button>
                 </Link>
-                {/* <Link to="/"> */}
+                <Link to={`${movie.id}/videos`} replace>
                     <button className="view-all-button">VIEW TRAILER</button>
-                {/* </Link> */}
+                </Link>
                 </div>
             </div>
             <div>
