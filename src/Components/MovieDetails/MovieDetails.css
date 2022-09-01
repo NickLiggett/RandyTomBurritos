@@ -30,7 +30,7 @@ h3 {
     justify-content: space-evenly;
     align-items: center;
     background: rgba(255, 255, 255, 0.85);
-    height: 65%;
+    height: 70%;
     width: 55%;
     padding-right: 20px;
     padding-left: 20px;
@@ -38,10 +38,11 @@ h3 {
     border-color: #f1bd5e;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
     font-family: 'Quicksand', sans-serif;
+    font-size: 25px;
 }
 
 .poster {
-    height: 65%;
+    height: 70%;
     border-style: solid;
     border-color: #f1bd5e;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
@@ -51,8 +52,7 @@ h3 {
     height: 50px;
     width: 270px;
     font-size: 20px;
-    margin-bottom: 3%;
-    margin-top: 3%;
+    margin: 3%;
     border-style: none;
     color: white;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
@@ -72,9 +72,24 @@ p {
     font-size: 65%;
     width: 80%;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .randy-tom {
     height: 80px;
     margin: 10px;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+}
+
+.rev-and-budget {
+    margin: 0;
+    text-align: center;
+    font-size: 100%;
+    padding: 0;
 }
