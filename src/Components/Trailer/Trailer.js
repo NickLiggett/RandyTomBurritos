@@ -1,6 +1,7 @@
 import React from 'react'
 import './Trailer.css'
 import { Link } from 'react-router-dom'
+import loadingGif from "../images/loading.gif"
 
 class Trailer extends React.Component {
     constructor(props) {
@@ -14,7 +15,6 @@ class Trailer extends React.Component {
     }
 
     componentDidMount = () => {
-        console.log("ello")
         fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
         .then(response => {
         if (!response.ok) {
@@ -24,9 +24,6 @@ class Trailer extends React.Component {
         }
         })
         .then(data => {
-            console.log(data.movies)
-            console.log(this.state.id)
-            console.log(data.movies[1].id)
            let theeMovie = data.movies.find(movie => movie.id === parseInt(this.state.id))
         this.setState({ movies: data.movies,
         currentMovie: theeMovie})
@@ -37,7 +34,6 @@ class Trailer extends React.Component {
         fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.state.id}/videos`)
         .then(response => response.json())
         .then(data => {
-            console.log(data.videos[1].key)
             this.setState({ trailer: data.videos[1].key })
         })
         }
@@ -59,15 +55,18 @@ class Trailer extends React.Component {
                 />{" "}
               <div className='button-container'>
               <Link to="/">
-                  <button className="view-all-button">RETURN TO ALL MOVIES</button>
+                  <button className="home-button">RETURN TO ALL MOVIES</button>
               </Link>
-              <Link to={`${this.state.id}`} replace>
-                  <button className="view-all-button">RETURN TO MOVIE DETAILS</button>
+              <Link to={`/${this.state.id}`} replace>
+                  <button className="movie-details-button">RETURN TO MOVIE DETAILS</button>
               </Link>
               </div>
               </div>
               </div>
-            ) : <p>Loading...</p>
+            ) : 
+            <div className="loading">
+            <h1>Loading...</h1>
+            </div>
         )
     }
 }

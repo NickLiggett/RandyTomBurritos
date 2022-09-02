@@ -32,10 +32,18 @@ describe('Main Page', () => {
       .url().should('include', '/694919')
       .get('.details').should('not.exist','I STILL BELIEVE')
   })
+
+  it('Should be able to click on the View Trailer button and be taken to a page with that movie\'s trailer', () => {
+    cy.get('#694919').click()
+      .get('.trailer-button').click()
+      .url().should('include', '/694919/videos')
+      // .get('#585244').should('have.css', 'background-image')
+      // .and('include', 'https://image.tmdb.org/t/p/original//dqA2FCzz4OMmXLitKopzf476RVB.jpg')
+  })
   
   it('Should be able to return to the main page when the user clicks the "return to all movies" button', () => {
     cy.get('#694919').click()
-      .get('.view-all-button').click()
+      .get('.home-button').click()
       .url().should('include', '/')
   })
 

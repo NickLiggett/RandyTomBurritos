@@ -64,17 +64,20 @@ class MovieDetails extends React.Component {
                 </h3>
                 <div className='button-container'>
                 <Link to="/">
-                    <button className="view-all-button">RETURN TO ALL MOVIES</button>
+                    <button className="home-button">RETURN TO ALL MOVIES</button>
                 </Link>
-                <Link to={`${movie.id}/videos`} replace>
-                    <button className="view-all-button">VIEW TRAILER</button>
+                <Link to={`/${movie.id}/videos`} replace>
+                    <button className="trailer-button">VIEW TRAILER</button>
                 </Link>
                 </div>
             </div>
             <div>
             </div>
         </div>
-    ) : <p>Loading...</p>
+    ) : 
+    <div className="loading">
+        <h1>Loading...</h1>
+    </div>
 }
 }
 

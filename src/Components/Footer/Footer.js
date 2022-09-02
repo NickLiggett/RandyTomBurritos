@@ -3,7 +3,7 @@ import "./Footer.css"
 
 const Footer = () => {
     return (
-        <footer>ⓒ Abby Luce and Nick Liggett</footer>
+        <footer>🌯 🌯 🌯  ⓒ Abby Luce and Nick Liggett  🌯 🌯 🌯 </footer>
     )
 }
 
