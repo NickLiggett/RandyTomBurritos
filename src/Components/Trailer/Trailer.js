@@ -1,7 +1,6 @@
 import React from 'react'
 import './Trailer.css'
 import { Link } from 'react-router-dom'
-import loadingGif from "../images/loading.gif"
 
 class Trailer extends React.Component {
     constructor(props) {
