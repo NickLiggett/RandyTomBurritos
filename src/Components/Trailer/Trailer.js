@@ -34,7 +34,8 @@ class Trailer extends React.Component {
         fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.state.id}/videos`)
         .then(response => response.json())
         .then(data => {
-            this.setState({ trailer: data.videos[1].key })
+            const theTrailer = data.videos.find(video => video.type === "Trailer")
+            this.setState({ trailer: theTrailer.key })
         })
         }
     
