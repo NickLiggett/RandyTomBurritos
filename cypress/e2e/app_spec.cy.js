@@ -37,8 +37,7 @@ describe('Main Page', () => {
     cy.get('#694919').click()
       .get('.trailer-button').click()
       .url().should('include', '/694919/videos')
-      // .get('#585244').should('have.css', 'background-image')
-      // .and('include', 'https://image.tmdb.org/t/p/original//dqA2FCzz4OMmXLitKopzf476RVB.jpg')
+      .get('iframe').should('have.attr', 'src').should('include', 'https://www.youtube.com/embed/aETz_dRDEys')
   })
   
   it('Should be able to return to the main page when the user clicks the "return to all movies" button', () => {
