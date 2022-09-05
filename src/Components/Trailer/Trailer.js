@@ -33,8 +33,10 @@ class Trailer extends React.Component {
         fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.state.id}/videos`)
         .then(response => response.json())
         .then(data => {
-            const theTrailer = data.videos.find(video => video.type === "Trailer")
-            this.setState({ trailer: theTrailer.key })
+            let theTrailer
+            !data.videos.length ? theTrailer = "No Video" :
+            theTrailer = data.videos.find(video => video.type === "Trailer").key
+            this.setState({ trailer: theTrailer })
         })
         }
     
