@@ -12,7 +12,7 @@ npm start
 ```
 
 ## Application in Action
-![cookin](/Users/nick/React/RandyTomBurritos/2022-09-05 13.46.58.gif)
+![cookin](https://github.com/NickLiggett/RandyTomBurritos/blob/main/2022-09-05%2013.46.58.gif?raw=true)
 
 ## Technologies
   - React
