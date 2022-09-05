@@ -1,7 +1,7 @@
 .trailer-container {
     background: rgba(255, 255, 255, 0.85);
-    height: 60%;
-    width: 80%;
+    height: 70%;
+    width: 70%;
     padding-right: 20px;
     padding-left: 20px;
     border-style: solid;
@@ -24,29 +24,18 @@
     text-align: center;
 }
 
-.view-all-button {
-    height: 50px;
-    width: 270px;
-    font-size: 20px;
-    margin: 3%;
-    border-style: none;
-    color: white;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
-    background-color: #eca72b;
-    border-radius: 5px;
-}
-
-.view-all-button:hover {
-    cursor: pointer;
-    background-color: #f3b82f;
-}
-
 iframe {
-    width: 90%;
+    margin-top: 5%;
+    width: 80%;
     height: 90%;
 }
 
 .button-container {
     display: flex;
     align-items: center;
+}
+
+.loading {
+    margin-top: 20%;
+    text-align: center;
 }

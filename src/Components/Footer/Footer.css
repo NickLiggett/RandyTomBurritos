@@ -11,4 +11,5 @@ footer {
     left: 0;
     right: 0;
     font-family: 'Quicksand', sans-serif;
+    text-shadow: -.5px .5px 0px #b3b2b2;
 }
