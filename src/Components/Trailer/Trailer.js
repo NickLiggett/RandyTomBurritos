@@ -1,7 +1,6 @@
 import React from 'react'
 import './Trailer.css'
 import { Link } from 'react-router-dom'
-import loadingGif from "../images/loading.gif"
 
 class Trailer extends React.Component {
     constructor(props) {
@@ -34,7 +33,8 @@ class Trailer extends React.Component {
         fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.state.id}/videos`)
         .then(response => response.json())
         .then(data => {
-            this.setState({ trailer: data.videos[1].key })
+            const theTrailer = data.videos.find(video => video.type === 'Trailer')
+            this.setState({ trailer: theTrailer.key })
         })
         }
     
@@ -65,7 +65,7 @@ class Trailer extends React.Component {
               </div>
             ) : 
             <div className="loading">
-            <h1>Loading...</h1>
+            <h1 className="loading-message">Loading...</h1>
             </div>
         )
     }

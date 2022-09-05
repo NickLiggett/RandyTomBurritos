@@ -37,5 +37,11 @@ iframe {
 
 .loading {
     margin-top: 20%;
+    height: 100%;
     text-align: center;
+}
+
+.loading-message {
+    margin-top: 50%;
+
 }
