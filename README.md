@@ -7,7 +7,12 @@
   - When a user is at the movie details page they will see a button that will navigate to a page where that movie's trailer can be viewed and another button that can take them back to the homepage to view all the movie posters again.
   
 ## Setup
-Copy, paste, and run this code-block in your terminal to checkout our site.  
+Click [here](https://nickliggett.github.io/RandyTomBurritos/) to checkout our site.
+
+or
+
+
+Copy, paste, and run this code-block in your terminal to run locally.  
  ```
 git clone git@github.com:NickLiggett/RandyTomBurritos.git
 cd RandyTomBurritos
