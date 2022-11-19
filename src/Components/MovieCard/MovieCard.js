@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 
 const MovieCard = ({ id, posterPath }) => {
     return (
-        <Link to={`${id}`} className="link">
+        <Link to={`/RandyTomBurritos/${id}`} className="link">
         <div className="movie-card" 
             id={id}
             style={{

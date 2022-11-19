@@ -63,10 +63,10 @@ class MovieDetails extends React.Component {
                     {movie.genres.join(' · ')}
                 </h3>
                 <div className='button-container'>
-                <Link to="/">
+                <Link to="/RandyTomBurritos/">
                     <button className="home-button">RETURN TO ALL MOVIES</button>
                 </Link>
-                <Link to={`/${movie.id}/videos`} replace>
+                <Link to={`/RandyTomBurritos/${movie.id}/videos`} replace>
                     <button className="trailer-button">VIEW TRAILER</button>
                 </Link>
                 </div>
