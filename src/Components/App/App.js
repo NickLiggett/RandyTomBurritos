@@ -44,9 +44,9 @@ class App extends React.Component {
       <div className="main">
         <Header />
           {(this.state.error && <h1 className="error-message">{this.state.errorMessage}</h1>)}
-          <Route exact path="/" render={() => <MainSection movies={this.state.movies} />}/>
-          <Route exact path="/:id" render={({ match }) => <MovieDetails movieID={match.params.id} />}/>
-          <Route exact path="/:id/videos" render={({ match }) => <Trailer movieID={match.params.id} movies={this.state.movies}/>}/>
+          <Route exact path="/RandyTomBurritos" render={() => <MainSection movies={this.state.movies} />}/>
+          <Route exact path="/RandyTomBurritos/:id" render={({ match }) => <MovieDetails movieID={match.params.id} />}/>
+          <Route exact path="/RandyTomBurritos/:id/videos" render={({ match }) => <Trailer movieID={match.params.id} movies={this.state.movies}/>}/>
         <Footer />
       </div>
   )
