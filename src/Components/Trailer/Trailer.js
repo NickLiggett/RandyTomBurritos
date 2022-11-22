@@ -56,10 +56,10 @@ class Trailer extends React.Component {
                   title="video"
                 />{" "}
               <div className='button-container'>
-              <Link to="/">
+              <Link to="/RandyTomBurritos">
                   <button className="home-button">RETURN TO ALL MOVIES</button>
               </Link>
-              <Link to={`/${this.state.id}`} replace>
+              <Link to={`/RandyTomBurritos/${this.state.id}`} replace>
                   <button className="movie-details-button">RETURN TO MOVIE DETAILS</button>
               </Link>
               </div>
