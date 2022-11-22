@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/RandyTomBurritos/static/css/main.3526ea56.css",
-    "main.js": "/RandyTomBurritos/static/js/main.337d2a7d.js",
+    "main.js": "/RandyTomBurritos/static/js/main.b0755758.js",
     "static/js/787.6fd0f8a7.chunk.js": "/RandyTomBurritos/static/js/787.6fd0f8a7.chunk.js",
     "static/media/randy-tom.png": "/RandyTomBurritos/static/media/randy-tom.af74909bd149991601cc.png",
     "index.html": "/RandyTomBurritos/index.html",
     "main.3526ea56.css.map": "/RandyTomBurritos/static/css/main.3526ea56.css.map",
-    "main.337d2a7d.js.map": "/RandyTomBurritos/static/js/main.337d2a7d.js.map",
+    "main.b0755758.js.map": "/RandyTomBurritos/static/js/main.b0755758.js.map",
     "787.6fd0f8a7.chunk.js.map": "/RandyTomBurritos/static/js/787.6fd0f8a7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3526ea56.css",
-    "static/js/main.337d2a7d.js"
+    "static/js/main.b0755758.js"
   ]
 }
